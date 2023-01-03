@@ -1,0 +1,9 @@
+{
+  "title": "Listado de personajes de Harry Potter",
+  "table": {
+    "image": "Imagen",
+    "name": "Nombre",
+    "nickname": "Apodo",
+    "actor": "Actor"
+  }
+}

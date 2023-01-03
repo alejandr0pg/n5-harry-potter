@@ -1,0 +1,29 @@
+const { merge } = require("webpack-merge");
+const singleSpaDefaults = require("webpack-config-single-spa-react-ts");
+const CopyPlugin = require("copy-webpack-plugin");
+
+module.exports = (webpackConfigEnv, argv) => {
+  const defaultConfig = singleSpaDefaults({
+    orgName: "n5",
+    projectName: "harry-potter",
+    webpackConfigEnv,
+    argv,
+  });
+
+  return merge(defaultConfig, {
+    // modify the webpack config however you'd like to by adding to this object
+    module: {
+      rules: [
+        {
+          test: /\.s[ac]ss$/i,
+          use: ["style-loader", "css-loader", "sass-loader"],
+        },
+      ],
+    },
+    plugins: [
+      new CopyPlugin({
+        patterns: [{ from: "src/public/translations", to: "locales" }],
+      }),
+    ],
+  });
+};

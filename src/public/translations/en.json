@@ -1,0 +1,9 @@
+{
+  "title": "List of Harry Potter characters",
+  "table": {
+    "image": "Picture",
+    "name": "Name",
+    "nickname": "Nickname",
+    "actor": "Actor"
+  }
+}
